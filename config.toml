@@ -1,0 +1,105 @@
+# Umbriel default config
+# Copy this file to ~/.config/umbriel/config.toml to customize it.
+# Changes apply on save. See docs/user/ for the full reference.
+#
+# [include] merges extra files into this one. Included files are parsed first,
+# in list order (later files override earlier ones), then everything in this
+# file overrides all of them. That is why Noctalia's dynamic theming can render
+# its palette into a separate noctalia.toml and still let you override the
+# generated colors here.
+[include]
+files = ["env.toml", "outputs.toml", "input.toml", "appearance.toml", "layer_rules.toml", "keybinds.toml" , "window_rules.toml", "security.toml", "noctalia.toml"]
+
+[general]
+autostart = ["noctalia"]
+# mod_key = "Super"            # Mod in keybinds; defaults to Super (Alt when nested)
+xwayland = true                # requires restart to change
+show_cheatsheet = true         # show keybinds overlay on startup
+focus_on_activate = false      # unsolicited requests cannot add focus; trusted launches may still focus
+honor_restored_maximize = false # let apps restore their saved maximized state
+
+# Defines commands that are executed when the laptop lid is closed or opened.
+# [events]
+# lid_close = "notify-send 'The laptop lid is closed!'"
+# lid_open = "notify-send 'The laptop lid is open!'"
+
+[workspaces]
+back_and_forth = false
+empty_above = false
+
+# Overview -------------------------------------------------------------------
+
+[overview]
+zoom = 0.55                     # 0.1-0.75
+# Pinned windows stay hidden until overview closes; visible scratchpads are dismissed.
+# background_blur = true        # blur the wallpaper while the overview is open
+# background_tint = "#10101430"
+# workspace_background = "#00000044" # set alpha to FF for an opaque background
+ shortcuts = true
+# shortcut_keys = "1234567890" # favorite keys in preference order
+# badge_color = "#7AA3FFFF"   # defaults to colors.accent_primary
+
+# Hot corners ---------------------------------------------------------------
+
+[hot_corners.top_left]
+enabled = false
+delay_ms = 500                # 0-10000, 0 activates immediately
+action = "overview-open"
+
+[hot_corners.top_right]
+enabled = true
+delay_ms = 100
+action = "overview-toggle"
+
+[hot_corners.bottom_left]
+enabled = false
+delay_ms = 500
+action = "overview-toggle"
+
+[hot_corners.bottom_right]
+enabled = true
+delay_ms = 100
+action = "overview-toggle"
+
+# Layout ---------------------------------------------------------------------
+
+[layout]
+mode = "scrolling"             # "scrolling", "dwindle", or "master"
+# Inspect every workspace's effective mode with `umbriel workspaces --json`.
+gap = 3                        # 0-500
+width_presets = [0.5, 0.667] # width and height cycling, tiled and floating alike
+
+[layout.struts]
+# Signed logical pixels around normal tiled layouts, applied after panels.
+# Negative values expand the tiled area beyond those bounds.
+left = 8                       # -65535 to 65535
+right = 8
+top = 8
+bottom = 8
+
+[layout.scrolling]
+# Vertical workspaces stack horizontal lanes from top to bottom.
+direction = "horizontal"
+default_width_fraction = 0.5  # remove to let clients choose their initial width
+center_underfull_strip = true  # center the strip whenever it is narrower than the viewport
+center_focused = false # always center the focused column
+expand_single_column = true # fill lone column to viewport width
+
+[layout.dwindle]
+# Keep each split direction fixed after it is created.
+# preserve_split = false
+
+[layout.master]
+position = "left"              # "left" or "right"
+default_width_fraction = 0.55  # 0.1-0.9
+new_on_top = true             # place new windows at the top of the stack
+
+# Workspace layout overrides (see docs/user/workspaces.md#workspace-rules)
+[[workspace]]
+name = "CHAT"
+layout.mode = "scrolling"
+layout.gap = 4
+layout.scrolling.direction = "vertical"
+layout.scrolling.default_width_fraction = 0.50
+# layout.struts.top = 24       # override one edge and inherit the others
+# layout.scrolling.center_underfull_strip = false

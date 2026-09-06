@@ -1,0 +1,68 @@
+# Input ----------------------------------------------------------------------
+
+[input]
+middle_click_paste = true      # primary-selection clipboard, applies on reload
+
+[input.keyboard]
+# ASCII keybind fallback uses only layouts listed for this keyboard; a single
+# non-Latin layout has no implicit Latin fallback.
+layout = "us"                    # "us,de" loads both; switch with keyboard-layout-next
+variant = ""
+options = ""                   # XKB options, e.g. "grp:alt_shift_toggle"
+repeat_rate = 25               # 0-1000 Hz
+repeat_delay = 600             # 0-10000 ms
+numlock_toggle = true # true enables NumLock when a keyboard connects; false leaves it off
+track_layout = "global"        # "global", or "window" to track the layout per surface
+
+[input.touchpad]
+tap = false                      # enabled by default; false disables tap-to-click
+# natural_scroll = true
+# accel_profile = "adaptive"    # "flat", "adaptive", or "custom <step> <points...>"
+# sensitivity = 0.5             # pointer speed, -1.0 to 1.0
+# scroll_factor = 1.5           # touchpad scroll speed, 0.1 to 10.0
+# disable_while_typing = true   # omitted preserves the device's libinput default
+# disable_on_external_mouse = true  # disable the touchpad while an external mouse is connected
+
+[input.mouse]
+# natural_scroll = false
+# accel_profile = "flat"       # omitted preserves the device's libinput default
+sensitivity = 0.0              # pointer speed, -1.0 to 1.0
+scroll_wheel_step = 80         # 1-1000
+# Override only the listed settings for an exact, case-sensitive device name.
+# Applies per device kind: layout, variant, options, repeat_rate, and
+# repeat_delay to keyboards; tap and disable_while_typing to touchpads;
+# natural_scroll, accel_profile, and sensitivity to touchpads and mice.
+# Find names with `libinput list-devices`.
+# [[input.device]]
+# name = "Acme Precision Touchpad"
+# tap = true
+# natural_scroll = false
+# accel_profile = "flat"
+# sensitivity = 0.0
+# disable_while_typing = false
+# [[input.device]]
+# name = "Gaming Mouse"
+# accel_profile = "flat"
+# sensitivity = 0.0
+
+[input.tablet]
+enabled = true                 # false disables the tablet and its pads
+# map_to_output = "DP-1"       # confine the tablet area to one monitor
+# map_to_focused_output = false
+# map_to_focused_window = false  # pen area = focused window; wins over the output mappings
+# left_handed = false
+# calibration_matrix = [1.0, 0.0, 0.0, 0.0, 1.0, 0.0]  # libinput calibration, 6 numbers
+
+[input.cursor]
+theme = "Bibata-Modern-Ice"
+size = 24                      # 1-512
+hardware_cursor = true         # false forces software cursor composition
+follows_focus = false          # warp to windows selected by focus navigation
+hide_when_typing = false       # hide after typing unless a pointer button is held
+hide_timeout_ms = 0            # 0-3600000, 0 disables hiding
+
+[input.focus]
+follows_mouse = true
+# Refuse hover focus when revealing the window would scroll further than this,
+# measured in viewport widths (1.0 = one full screen). Omit for no limit.
+# follows_mouse_max_scroll = 0.5

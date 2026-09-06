@@ -1,0 +1,7 @@
+# Security context rules (see docs/user/security.md) ----------------------
+
+# Grant a sandboxed clipboard manager the data-control protocol
+# [[security_context_rule]]
+# match.sandbox_engine = 'org\.flatpak'
+# match.app_id = 'org\.example\.ClipboardManager'
+# allow_globals = ["ext_data_control_manager_v1"]

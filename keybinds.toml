@@ -3,6 +3,12 @@
 [keybinds]
 "Mod+Shift+O" = "cheatsheet-toggle"
 
+#[scratchpad]
+"Mod+0" = "window-toggle-scratchpad:terminal"
+"Mod+Space" = "scratchpad-toggle:terminal"
+"Mod+Shift+0" = "window-move-to-scratchpad:terminal"
+"Mod+Ctrl+0" = "window-restore-from-scratchpad:terminal"
+
 #[Moving around]
 "Mod+Q" = "window-close"
 "Mod+O" = "overview-toggle"
@@ -19,6 +25,10 @@
 "Mod+Right" = "window-focus-right"
 "Mod+Up" = "window-focus-up"
 "Mod+Down" = "window-focus-down"
+"Mod+Alt+1" = "column-move-to-workspace:MAIN"
+"Mod+Alt+2" = "column-move-to-workspace:STORAGE"
+"Mod+Alt+3" = "column-move-to-workspace:CHAT"
+"Mod+Alt+4" = "window-set-width:0.25"
 
 #[Window Widths]
 "Mod+F" = "window-toggle-fullscreen"
@@ -33,13 +43,13 @@
 "Mod+B" = "spawn:helium-browser"
 "Mod+D" = "spawn:vesktop"
 "Mod+Z" = "spawn:zeditor"
-"Mod+S" = "spawn:steam"
 
 #[Noctalia panels/menus]
-"Mod+Space" = "spawn:noctalia msg panel-toggle launcher"
+"Mod" = "spawn:noctalia msg panel-toggle launcher"
 "Mod+Escape" = "spawn:noctalia msg panel-toggle session"
 "Mod+V" = "spawn:noctalia msg panel-toggle clipboard"
-"Mod+A" = "spawn:noctalia msg screenshot-region"
+"Mod+S" = "spawn:noctalia msg screenshot-region"
+"Mod+Shift+S" = "spawn:noctalia msg annotate"
 "Mod+Comma" = "spawn:noctalia msg settings-toggle"
 "Mod+Tab" = "spawn:noctalia msg window-switcher"
 
@@ -60,7 +70,6 @@
 #"Mod+Tab" = "scratchpad-focus-next"
 # Scratchpads return to their original output and position after temporary output loss.
 # Add `:DP-1` to any scratchpad action to target that output from anywhere.
-#"Mod+0" = "scratchpad-toggle:DP-1"
 # "Mod+Shift+0" = "window-move-to-scratchpad:DP-1"
 # "Mod+Ctrl+0" = "window-restore-from-scratchpad:DP-1"
 # "Mod+Alt+0" = "scratchpad-focus-next:DP-1"
@@ -86,10 +95,9 @@
 # "Mod+Shift+Bracketleft" = "window-swap-previous"
 # "Mod+Shift+Equal" = "layout-master-count-increase"
 # "Mod+Shift+Minus" = "layout-master-count-decrease"
-# "Mod+Ctrl+1" = "column-move-to-workspace:1"
 # "Mod+Ctrl+Comma" = "workspace-move-up"
 # "Mod+Ctrl+Period" = "workspace-move-down"
-#"Mod+Ctrl+H" = "output-focus-left"
+# "Mod+Ctrl+H" = "output-focus-left"
 # "Mod+Shift+O" = "dpms-off"        # new input wakes displays after all are off
 # "Mod+Ctrl+O" = "dpms-off:DP-1"   # stays off while another display is awake
 # "Mod+Minus" = "window-modify-width:-0.1"

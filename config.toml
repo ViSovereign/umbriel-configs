@@ -27,6 +27,9 @@ honor_restored_maximize = false # let apps restore their saved maximized state
 back_and_forth = false
 empty_above = false
 
+[[scratchpad]]
+name = "terminal"
+
 # Overview -------------------------------------------------------------------
 
 [overview]
@@ -66,24 +69,22 @@ action = "overview-toggle"
 [layout]
 mode = "scrolling"             # "scrolling", "dwindle", or "master"
 # Inspect every workspace's effective mode with `umbriel workspaces --json`.
-gap = 3                        # 0-500
-width_presets = [0.5, 0.667] # width and height cycling, tiled and floating alike
+gap = 5                        # 0-500
+width_presets = [0.333, 0.5, 0.667] # width and height cycling, tiled and floating alike
 
-[layout.struts]
-# Signed logical pixels around normal tiled layouts, applied after panels.
-# Negative values expand the tiled area beyond those bounds.
-left = 8                       # -65535 to 65535
-right = 8
-top = 8
-bottom = 8
+#[layout.struts]
+## Signed logical pixels around normal tiled layouts, applied after panels.
+## Negative values expand the tiled area beyond those bounds.
+#left = 8                       # -65535 to 65535
+#right = 8
+#top = 8
+#bottom = 8
 
 [layout.scrolling]
 # Vertical workspaces stack horizontal lanes from top to bottom.
-direction = "horizontal"
-default_width_fraction = 0.5  # remove to let clients choose their initial width
+default_width_fraction = 0.667  # remove to let clients choose their initial width
 center_underfull_strip = true  # center the strip whenever it is narrower than the viewport
-center_focused = false # always center the focused column
-expand_single_column = true # fill lone column to viewport width
+center_focused = "never" # always center the focused column
 
 [layout.dwindle]
 # Keep each split direction fixed after it is created.
@@ -91,15 +92,33 @@ expand_single_column = true # fill lone column to viewport width
 
 [layout.master]
 position = "left"              # "left" or "right"
-default_width_fraction = 0.55  # 0.1-0.9
+default_width_fraction = 0.667  # 0.1-0.9
 new_on_top = true             # place new windows at the top of the stack
 
-# Workspace layout overrides (see docs/user/workspaces.md#workspace-rules)
+[[workspace]]
+name = "MAIN"
+layout.mode = "scrolling"
+layout.scrolling.default_width_fraction = 0.667
+layout.struts.left = 15
+layout.struts.right = 15
+
+[[workspace]]
+name = "STORAGE"
+layout.mode = "scrolling"
+layout.scrolling.default_width_fraction = 0.667
+layout.struts.left = 15
+layout.struts.right = 50
+
 [[workspace]]
 name = "CHAT"
 layout.mode = "scrolling"
-layout.gap = 4
-layout.scrolling.direction = "vertical"
-layout.scrolling.default_width_fraction = 0.50
-# layout.struts.top = 24       # override one edge and inherit the others
-# layout.scrolling.center_underfull_strip = false
+layout.scrolling.default_width_fraction = 0.5
+layout.struts.top = 10
+layout.struts.bottom = 10
+
+[[workspace]]
+name = "HIDDEN"
+layout.mode = "scrolling"
+layout.scrolling.default_width_fraction = 0.5
+layout.struts.top = 10
+layout.struts.bottom = 10

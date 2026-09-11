@@ -46,7 +46,7 @@ scroll_wheel_step = 80         # 1-1000
 # sensitivity = 0.0
 
 [input.tablet]
-enabled = true                 # false disables the tablet and its pads
+enabled = false                 # false disables the tablet and its pads
 # map_to_output = "DP-1"       # confine the tablet area to one monitor
 # map_to_focused_output = false
 # map_to_focused_window = false  # pen area = focused window; wins over the output mappings
@@ -65,4 +65,4 @@ hide_timeout_ms = 0            # 0-3600000, 0 disables hiding
 follows_mouse = true
 # Refuse hover focus when revealing the window would scroll further than this,
 # measured in viewport widths (1.0 = one full screen). Omit for no limit.
-# follows_mouse_max_scroll = 0.5
+#follows_mouse_max_scroll = 0.1

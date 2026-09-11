@@ -5,6 +5,11 @@
 blur = true
 blur_optimized = false
 
+# First Window opens all big man like
+[[window_rule]]
+match.is_alone = true
+default_maximize = true
+
 # When a window is not focused, let some light shine through
 [[window_rule]]
 match.is_focused = false

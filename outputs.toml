@@ -1,32 +1,19 @@
 # Outputs (see docs/user/outputs.md) ----------------------------------------
 
-# Named by connector, or by the `Config name` printed by `umbriel outputs`.
-# The monitor form follows the display between machines and ports:
-# [output."Some Make Some Model ABC123"]
 [output."DP-1"]
 mode = "2560x1440@144"
-position = [0,0]             # logical top-left; omit for automatic placement
-#scale = 1.25                  # divides the mode size in layout coordinates
-vrr = "fullscreen"            # "disabled" (default), "always", or "fullscreen"
-tearing = true                 # allow eligible fullscreen clients to request tearing
-# direct_scanout = true           # false forces composition on this output
-# hdr = "auto"                  # "off", "on", metadata-driven "auto", or any-app "fullscreen"
-# sdr_white = 203                # SDR reference white in cd/m2 while HDR is active
-# enabled = true                # false removes it; re-enabling restores windows, layout, active workspace, and taskbar entries
-# Dynamic workspaces are the default; use a count or name list for static workspaces.
+position = [0,0]
+vrr = "fullscreen"
+tearing = true
 workspaces = ["MAIN", "STORAGE"]
+layout.scrolling.default_width_fraction = 0.5
 
 [output."DP-2"]
-mode = "2560x1440@144"
-position = [-1440, -520]             # logical top-left; omit for automatic placement
+mode = "2560x1440@60"
+position = [-1440, -520]
 transform = "270"
-#scale = 1.25                  # divides the mode size in layout coordinates
-vrr = "fullscreen"            # "disabled" (default), "always", or "fullscreen"
-tearing = true                 # allow eligible fullscreen clients to request tearing
-# direct_scanout = true           # false forces composition on this output
-# hdr = "auto"                  # "off", "on", metadata-driven "auto", or any-app "fullscreen"
-# sdr_white = 203                # SDR reference white in cd/m2 while HDR is active
-# enabled = true                # false removes it; re-enabling restores windows, layout, active workspace, and taskbar entries
-# Dynamic workspaces are the default; use a count or name list for static workspaces.
+vrr = "disabled"
+tearing = false
 workspaces = ["CHAT", "HIDDEN"]
 workspace_axis = "horizontal"
+layout.scrolling.default_width_fraction = 0.5

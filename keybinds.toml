@@ -2,6 +2,11 @@
 
 [keybinds]
 "Mod+Shift+O" = "cheatsheet-toggle"
+"Mod+Q" = "window-close"
+"Mod+O" = "overview-toggle"
+"Mod+T" = "window-toggle-floating"
+"Mod+Shift+T" = "window-focus-switch-floating"
+"Mod+P" = "window-toggle-pinned"
 
 #[scratchpad]
 "Mod+0" = "window-toggle-scratchpad:terminal"
@@ -10,32 +15,31 @@
 "Mod+Ctrl+0" = "window-restore-from-scratchpad:terminal"
 
 #[Moving around]
-"Mod+Q" = "window-close"
-"Mod+O" = "overview-toggle"
-"Mod+1" = "workspace-switch:MAIN"
-"Mod+2" = "workspace-switch:STORAGE"
-"Mod+3" = "workspace-switch:CHAT"
-"Mod+GRAVE" = "spawn:/home/b/.config/umbriel/scripts/swapMonitors.sh"
+"Mod+Alt+1" = "workspace-switch:MAIN"
+"Mod+Alt+2" = "workspace-switch:STORAGE"
+"Mod+Alt+3" = "workspace-switch:CHAT"
+"Mod+Alt+4" = "workspace-switch:HIDDEN"
+"Mod+GRAVE" = "spawn:~/.config/umbriel/scripts/swapMonitors.sh"
 "Mod+MouseMiddle" = "layout-scroll-drag"
-"Mod+WheelUp" = "workspace-previous"
-"Mod+WheelDown" = "workspace-next"
+"Mod+MouseForward" = "workspace-previous"
+"Mod+MouseBack" = "workspace-next"
 "Mod+Bracketright" = "window-focus-next"
 "Mod+Bracketleft" = "window-focus-previous"
 "Mod+Left" = "window-focus-left"
 "Mod+Right" = "window-focus-right"
-"Mod+Up" = "window-focus-up"
-"Mod+Down" = "window-focus-down"
-"Mod+Alt+1" = "column-move-to-workspace:MAIN"
-"Mod+Alt+2" = "column-move-to-workspace:STORAGE"
-"Mod+Alt+3" = "column-move-to-workspace:CHAT"
-"Mod+Alt+4" = "window-set-width:0.25"
+"Mod+Up" = "workspace-previous"
+"Mod+Down" = "workspace-next"
 
 #[Window Widths]
+"Mod+1" = "window-set-width:0.25"
+"Mod+2" = "window-set-width:0.50"
+"Mod+3" = "window-set-width:0.333"
+"Mod+4" = "window-set-width:0.75"
+"Mod+WheelUp" = "window-modify-width:0.05"
+"Mod+WheelDown" = "window-modify-width:-0.05"
 "Mod+F" = "window-toggle-fullscreen"
-"Mod+R" = "window-cycle-width"
-"Mod+Shift+R" = "window-toggle-maximize"
-"Mod+T" = "window-toggle-floating"
-"Mod+Shift+T" = "window-focus-switch-floating"
+"Mod+Shift+R" = "window-cycle-width"
+"Mod+R" = "window-toggle-maximize"
 
 #[Applications]
 "Mod+X" = "spawn:kitty"
@@ -61,62 +65,3 @@
 "XF86AudioPlay"        = "spawn:noctalia msg media toggle"
 "XF86AudioNext"        = "spawn:noctalia msg media next"
 "XF86AudioPrev"        = "spawn:noctalia msg media previous"
-
-
-#"Mod+P" = "window-toggle-pinned"
-#"Mod+Shift+Space" = "window-move-to-scratchpad"
-#"Mod+Space" = "scratchpad-toggle:DP-1"
-#"Mod+Ctrl+Space" = "window-restore-from-scratchpad"
-#"Mod+Tab" = "scratchpad-focus-next"
-# Scratchpads return to their original output and position after temporary output loss.
-# Add `:DP-1` to any scratchpad action to target that output from anywhere.
-# "Mod+Shift+0" = "window-move-to-scratchpad:DP-1"
-# "Mod+Ctrl+0" = "window-restore-from-scratchpad:DP-1"
-# "Mod+Alt+0" = "scratchpad-focus-next:DP-1"
-# "Mod+Space" is taken above; pick a free chord for layout switching.
-# "Mod+Shift+K" = "keyboard-layout-next"
-# Drag a scrolling workspace directly along its configured axis.
-# Submaps can nest; entry binds should not repeat. Inspect the active layer with `umbriel submap`.
-# "Mod+R" = { action = "submap:resize", repeat = false }
-# Omit `submap` to add no post-action transition, or set it to "reset" to exit after the action.
-# "submap[resize],1" = { action = "window-set-width:0.5", submap = "reset" }
-# "submap[resize],Escape" = "submap:reset"
-
-# Output, workspace, and window movement actions.
-# "Mod+Home" = "column-focus-first"
-# "Mod+End" = "column-focus-last"
-# "Mod+Shift+Home" = "column-move-to-first"
-# "Mod+Shift+End" = "column-move-to-last"
-# "Mod+Shift+Comma" = "window-move-to-workspace-previous"
-# "Mod+Shift+Period" = "window-move-to-workspace-next"
-# "Mod+Ctrl+Page_Up" = "column-move-to-workspace-previous"
-# "Mod+Ctrl+Page_Down" = "column-move-to-workspace-next"
-# "Mod+Shift+Bracketright" = "window-swap-next"
-# "Mod+Shift+Bracketleft" = "window-swap-previous"
-# "Mod+Shift+Equal" = "layout-master-count-increase"
-# "Mod+Shift+Minus" = "layout-master-count-decrease"
-# "Mod+Ctrl+Comma" = "workspace-move-up"
-# "Mod+Ctrl+Period" = "workspace-move-down"
-# "Mod+Ctrl+H" = "output-focus-left"
-# "Mod+Shift+O" = "dpms-off"        # new input wakes displays after all are off
-# "Mod+Ctrl+O" = "dpms-off:DP-1"   # stays off while another display is awake
-# "Mod+Minus" = "window-modify-width:-0.1"
-# "Mod+Alt+Minus" = "window-modify-height:-0.1"
-# "Mod+Shift+R" = "window-cycle-width-back"
-# "Mod+Alt+R" = "window-cycle-height"
-# "Mod+Alt+Shift+R" = "window-cycle-height-back"
-# "Mod+Grave" = "window-focus-last"
-# "Mod+BackSpace" = "window-consume-or-expel-left"
-# "Mod+C" = "column-center"
-# "Mod+Shift+C" = "window-center"
-# "Mod+Shift+T" = "workspace-set-layout:toggle"
-
-# Media and volume (see docs/user/keybinds.md#example-media-and-brightness-keys)
-# "XF86AudioRaiseVolume" = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
-# "XF86AudioLowerVolume" = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-# "Mod+XF86AudioMute"   = "spawn:wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-# "XF86AudioPlay"       = "spawn:playerctl play-pause"
-# "XF86AudioNext"       = "spawn:playerctl next"
-# "XF86AudioPrev"       = "spawn:playerctl prev"
-# Controls intended to remain usable while the session is locked use the table form.
-# "XF86MonBrightnessDown" = { action = "spawn:noctalia msg brightness-down 10", allow_when_locked = true }

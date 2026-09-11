@@ -12,5 +12,3 @@ This setup includes Umbriel configs for keybindings, window rules, animations, n
 git clone https://github.com/ViSovereign/umbriel-configs.git
 cd umbriel-config
 ```
-
-Copy to ```~/.config/umbriel``` and run ```d```

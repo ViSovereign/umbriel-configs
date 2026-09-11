@@ -38,7 +38,7 @@ default_output = "DP-1"
 [[window_rule]]
 match.app_id = "^dev.noctalia.Noctalia$"
 default_floating = true
-default_size = [1020, 900]
+default_size = [1200, 800]
 
 [[window_rule]]
 match.app_id = "^dev.noctalia.UmbrielSharePicker$"
@@ -49,7 +49,7 @@ default_size = [800, 600]
 [[window_rule]]
 match.app_id = "^org[.]gnome[.]Nautilus$"
 default_floating = true
-default_size = [1000, 1000]
+default_size = [1200, 800]
 
 # Need some PiP?
 [[window_rule]]
@@ -57,35 +57,3 @@ match.title = "^(Picture-in-Picture|Picture in picture)$"
 default_floating = true
 default_maximize = false
 default_position = { x = 20, y = 20, anchor = "bottom_right" }
-
-# Size a float as fractions of the usable area instead of pixels, so the rule
-# suits any monitor. default_size wins on both axes when it is also set.
-# [[window_rule]]
-# match.app_id = "^org[.]example[.]Utility$"
-# default_floating = true
-# default_width = 0.5             # initial width as a fraction of the usable area
-# default_height = 0.6            # initial height as a fraction of the usable area
-
-# [[window_rule]]
-# match.app_id = "firefox"
-# match.title = "^Library$"
-# default_floating = true
-# default_focused = false
-# focus_on_activate = true
-# opacity = 0.95                 # bypassed while fullscreen, restored after leaving fullscreen
-# vrr = "always"                # override the output VRR policy while focused
-# tearing = true                 # force a tearing request; false vetoes the client hint
-# hdr = "fullscreen"            # override the output HDR policy while focused
-
-# Keep tiled windows from several rules in one scrolling column. Lower orders
-# appear higher in horizontal scrolling and farther left in vertical scrolling.
-# [[window_rule]]
-# match.app_id = "^firefox$"
-# default_scrolling_column = "browsers"
-# default_scrolling_column_order = 10
-
-# [[window_rule]]
-# match.title = "^notificationtoasts_.+_desktop"
-# default_position = { x = 0, y = 0, anchor = "bottom_right" }
-# default_focused = false
-# default_pinned = true

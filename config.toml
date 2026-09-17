@@ -69,7 +69,7 @@ action = "overview-toggle"
 mode = "scrolling"             # "scrolling", "dwindle", or "master"
 # Inspect every workspace's effective mode with `umbriel workspaces --json`.
 gap = 5                        # 0-500
-width_presets = [0.333, 0.5, 0.667] # width and height cycling, tiled and floating alike
+extent_presets = [0.333, 0.5, 0.667]
 
 #[layout.struts]
 ## Signed logical pixels around normal tiled layouts, applied after panels.
@@ -81,7 +81,7 @@ width_presets = [0.333, 0.5, 0.667] # width and height cycling, tiled and floati
 
 [layout.scrolling]
 # Vertical workspaces stack horizontal lanes from top to bottom.
-default_width_fraction = 0.667  # remove to let clients choose their initial width
+default_extent_fraction = 0.5  # remove to let clients choose their initial width
 center_underfull_strip = true  # center the strip whenever it is narrower than the viewport
 center_focused = "never" # always center the focused column
 
@@ -90,31 +90,31 @@ center_focused = "never" # always center the focused column
 # preserve_split = false
 
 [layout.master]
-position = "left"                   # "left", "right", or "center"
-default_width_fraction = 0.60       # 0.1-0.9
-new_on_top = true                   # place new windows at the top of the stack
-new_becomes_master = true          # new windows take the master slot
+position = "left"
+default_width_fraction = 0.60
+new_on_top = true
+new_becomes_master = true
 
 [[workspace]]
 name = "MAIN"
 layout.mode = "scrolling"
-layout.struts.left = 15
-layout.struts.right = 15
+layout.struts.left = 5
+layout.struts.right = 5
 
 [[workspace]]
 name = "STORAGE"
 layout.mode = "scrolling"
-layout.struts.left = 15
-layout.struts.right = 50
+layout.struts.left = 5
+layout.struts.right = 5
 
 [[workspace]]
 name = "CHAT"
 layout.mode = "scrolling"
-layout.struts.top = 10
-layout.struts.bottom = 10
+layout.struts.top = 5
+layout.struts.bottom = 5
 
 [[workspace]]
 name = "HIDDEN"
 layout.mode = "scrolling"
-layout.struts.top = 10
-layout.struts.bottom = 10
+layout.struts.top = 5
+layout.struts.bottom = 5

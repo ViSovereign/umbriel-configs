@@ -6,7 +6,7 @@ position = [0,0]
 vrr = "fullscreen"
 tearing = true
 workspaces = ["MAIN", "STORAGE"]
-layout.scrolling.default_width_fraction = 0.5
+layout.scrolling.default_extent_fraction = 0.5
 
 [output."DP-2"]
 mode = "2560x1440@60"
@@ -16,4 +16,4 @@ vrr = "disabled"
 tearing = false
 workspaces = ["CHAT", "HIDDEN"]
 workspace_axis = "horizontal"
-layout.scrolling.default_width_fraction = 0.5
+layout.scrolling.default_extent_fraction = 0.5

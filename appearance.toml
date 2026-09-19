@@ -11,29 +11,29 @@ enabled = true
 duration_ms = 250
 curve = "easeout"
 
-#[animation.windows_in]
-#duration_ms = 500
-#shader = "shaders/bloom.glsl"
-#
-#[animation.windows_out]
-#duration_ms = 500
-#shader = "shaders/bloom.glsl"
-
 [animation.windows_in]
-enabled = true
-duration_ms = 600
-curve = "winOut"
-style = "popin"
+duration_ms = 500
+shader = "shaders/fade-open.glsl"
 
 [animation.windows_out]
-enabled = true
-duration_ms = 600
-curve = "winOut"
-style = "slide"
+duration_ms = 350
+shader = "shaders/pixelate-close.glsl"
+
+#[animation.windows_in]
+#enabled = true
+#duration_ms = 600
+#curve = "winOut"
+#style = "popin"
+
+#[animation.windows_out]
+#enabled = true
+#duration_ms = 100
+#curve = "winOut"
+#style = "slide"
 
 [animation.windows_move]
 enabled = true
-duration_ms = 600
+duration_ms = 350
 curve = "wind"
 
 [animation.workspaces]
@@ -41,10 +41,15 @@ enabled = true
 duration_ms = 600
 curve = "wind"
 
+#[animation.overview]
+#enabled = true
+#duration_ms = 450
+#curve = "easeout"
+
 [animation.overview]
 enabled = true
-duration_ms = 450
-curve = "easeout"
+duration_ms = 750
+shader = "shaders/overexposure-open.glsl"
 
 [animation.scratchpad]
 enabled = true
@@ -91,7 +96,7 @@ contrast = 0.9
 saturation = 1.1
 
 [appearance.shadow]
-enabled = false
+enabled = true
 softness = 2
 offset_x = 0
 offset_y = 0

@@ -12,3 +12,6 @@ This setup includes Umbriel configs for keybindings, window rules, animations, n
 git clone https://github.com/ViSovereign/umbriel-configs.git
 cd umbriel-config
 ```
+
+## Shaders
+Most of the shaders here came from (prometheaus umbirel shaders)[https://github.com/prometheaus/umbriel-shaders]!

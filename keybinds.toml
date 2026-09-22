@@ -25,10 +25,14 @@
 "Mod+MouseBack" = "workspace-next"
 "Mod+Bracketright" = "window-focus-next"
 "Mod+Bracketleft" = "window-focus-previous"
-"Mod+Left" = "window-focus-left"
-"Mod+Right" = "window-focus-right"
+"Mod+Left" = "window-focus-or-output-left"
+"Mod+Right" = "window-focus-or-output-right"
 "Mod+Up" = "workspace-previous"
 "Mod+Down" = "workspace-next"
+"Mod+Shift+Left" = "column-move-left"
+"Mod+Shift+Right" = "column-move-right"
+"Mod+Shift+Up" = "workspace-previous"
+"Mod+Shift+Down" = "workspace-next"
 
 #[Window Widths]
 "Mod+1" = "window-set-primary-extent:0.25"

@@ -1,14 +1,5 @@
-# Umbriel default config
-# Copy this file to ~/.config/umbriel/config.toml to customize it.
-# Changes apply on save. See docs/user/ for the full reference.
-#
-# [include] merges extra files into this one. Included files are parsed first,
-# in list order (later files override earlier ones), then everything in this
-# file overrides all of them. That is why Noctalia's dynamic theming can render
-# its palette into a separate noctalia.toml and still let you override the
-# generated colors here.
 [include]
-files = ["env.toml", "outputs.toml", "input.toml", "appearance.toml", "layer_rules.toml", "keybinds.toml" , "window_rules.toml", "security.toml", "noctalia.toml"]
+files = ["env.toml", "outputs.toml", "input.toml", "appearance.toml", "layer_rules.toml", "keybinds.toml" , "window_rules.toml", "security.toml"]
 
 [general]
 autostart = ["noctalia"]
@@ -18,7 +9,6 @@ show_cheatsheet = true         # show keybinds overlay on startup
 focus_on_activate = false      # unsolicited requests cannot add focus; trusted launches may still focus
 honor_restored_maximize = false # let apps restore their saved maximized state
 
-# Defines commands that are executed when the laptop lid is closed or opened.
 # [events]
 # lid_close = "notify-send 'The laptop lid is closed!'"
 # lid_open = "notify-send 'The laptop lid is open!'"
@@ -45,7 +35,7 @@ shortcuts = true
 
 [hot_corners.top_left]
 enabled = false
-delay_ms = 500                # 0-10000, 0 activates immediately
+delay_ms = 500
 action = "overview-open"
 
 [hot_corners.top_right]
@@ -67,27 +57,16 @@ action = "overview-toggle"
 
 [layout]
 mode = "scrolling"             # "scrolling", "dwindle", or "master"
-# Inspect every workspace's effective mode with `umbriel workspaces --json`.
-gap = 5                        # 0-500
-extent_presets = [0.333, 0.5, 0.667]
-
-#[layout.struts]
-## Signed logical pixels around normal tiled layouts, applied after panels.
-## Negative values expand the tiled area beyond those bounds.
-#left = 8                       # -65535 to 65535
-#right = 8
-#top = 8
-#bottom = 8
+gap = 5
+extent_presets = [0.25, 0.333, 0.5, 0.667, 0.75, 1.0]
 
 [layout.scrolling]
-# Vertical workspaces stack horizontal lanes from top to bottom.
 default_extent_fraction = 0.5  # remove to let clients choose their initial width
 center_underfull_strip = true  # center the strip whenever it is narrower than the viewport
 center_focused = "never" # always center the focused column
 
 [layout.dwindle]
-# Keep each split direction fixed after it is created.
-# preserve_split = false
+preserve_split = false
 
 [layout.master]
 position = "left"
@@ -118,3 +97,6 @@ name = "HIDDEN"
 layout.mode = "scrolling"
 layout.struts.top = 5
 layout.struts.bottom = 5
+
+[include.optional]
+files = ["noctalia.toml"]

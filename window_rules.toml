@@ -38,22 +38,24 @@ default_output = "DP-1"
 [[window_rule]]
 match.app_id = "^dev.noctalia.Noctalia$"
 default_floating = true
-default_floating_size_px = { width = 1200, height = 800 }
+default_floating_size_px = { width = 1280, height = 800 }
 
 [[window_rule]]
 match.app_id = "^dev.noctalia.UmbrielSharePicker$"
 default_floating = true
-default_floating_size_px = { width = 1200, height = 800 }
+default_floating_size_px = { width = 1280, height = 800 }
 
 # Floating file explorer
 [[window_rule]]
 match.app_id = "^org[.]gnome[.]Nautilus$"
 default_floating = true
-default_floating_size_px = { width = 1200, height = 800 }
+default_floating_size_px = { width = 1280, height = 800 }
 
 # Need some PiP?
 [[window_rule]]
 match.title = "^(Picture-in-Picture|Picture in picture)$"
 default_floating = true
 default_maximize = false
-default_position = { x = 20, y = 20, anchor = "bottom_right" }
+default_output = "DP-2"
+default_floating_size_px = { width = 1024, height = 576 }
+default_position = { x = 40, y = 40, anchor = "bottom_right" }

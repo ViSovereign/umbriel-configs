@@ -1,23 +1,45 @@
 # Animation ------------------------------------------------------------------
 
+[include]
+files = [
+    "shaders/community/border/pulse/effect.toml",
+    "shaders/community/window/rainfall/effect.toml",
+    "shaders/community/animation/vhs/effect.toml",
+    "shaders/animation/beam/effect.toml"
+]
+
+[effects]
+#window = "window.rainfall"
+border = "pulse"
+
 [animation]
 enabled = true
-duration_ms = 150
+duration_ms = 250
 curve = "easeout"
 
-#[animation.windows_in]
-#duration_ms = 150
-#shader = "shaders/fade-open.glsl"
+[animation.windows_in]
+enabled = true
+effect = "beam"
+duration_ms = 750
+curve = "linear"
 
 [animation.windows_out]
-duration_ms = 350
-shader = "shaders/pixelate-close.glsl"
+enabled = true
+effect = "beam"
+duration_ms = 650
+curve = "linear"
 
-[animation.windows_in]
-enabled = false
-curve = "spring:1,100"
-style = "popin"
-scale = 0.5
+#[animation.windows_in]
+#enabled = true
+#curve = "spring:1,900"
+#style = "popin"
+#scale = 0.5
+#
+#[animation.windows_out]
+#enabled = true
+#curve = "spring:1,1400"
+#style = "popin"
+#scale = 0.8
 
 [animation.windows_move]
 enabled = true
@@ -27,15 +49,10 @@ curve = "spring:1,900"
 enabled = true
 curve = "spring:1,800"
 
-#[animation.overview]
-#enabled = true
-#duration_ms = 450
-#curve = "easeout"
-
 [animation.overview]
 enabled = true
-duration_ms = 750
-shader = "shaders/overexposure-open.glsl"
+curve = "spring:1,800"
+workspace_curve = "spring:1,1000"
 
 [animation.scratchpad]
 enabled = true
@@ -47,15 +64,15 @@ maximize = false
 fullscreen = false
 
 [animation.border]
-enabled = true
-duration_ms = 350
-shader = "shaders/border-pulse.glsl"
+enabled = false
+curve = "spring:1,900"
 
 [animation.dim_unfocused]
 enabled = false
-duration_ms = 1000
-curve = "easeout"
-dim = 0.1
+dim = 0.0
+
+[animation.layers]
+enabled = false
 
 # Appearance -----------------------------------------------------------------
 

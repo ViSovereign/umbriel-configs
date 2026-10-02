@@ -1,0 +1,5 @@
+[effects.preset."cursor.seeing-stars"]
+kind = "cursor"
+shader = "shader.glsl"
+palette = true
+radius = 80

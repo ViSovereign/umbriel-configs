@@ -1,0 +1,4 @@
+[effects.preset.old-tv]
+kind = "animation"
+shader = "shader.glsl"
+palette = true

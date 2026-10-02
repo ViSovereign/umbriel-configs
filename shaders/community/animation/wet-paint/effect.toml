@@ -1,0 +1,4 @@
+[effects.preset.wet-paint]
+kind = "animation"
+shader = "shader.glsl"
+palette = true

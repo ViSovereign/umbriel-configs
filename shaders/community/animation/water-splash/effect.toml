@@ -1,0 +1,4 @@
+[effects.preset."water-splash"]
+kind = "animation"
+shader = "shader.glsl"
+palette = true

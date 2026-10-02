@@ -1,0 +1,99 @@
+# Magic
+
+Opening reveals the window from a violet puff surrounded by drifting golden four-point sparkles. Closing dissolves the window into the puff and sparkling dust.
+
+![Synthetic opening frame of Magic](preview.png)
+
+Synthetic shader render at 55% of opening, not a compositor screenshot. Explore both directions and scrub the timeline in the [interactive preview](../../preview/).
+
+## Use
+
+Save [effect.toml](effect.toml) and [shader.glsl](shader.glsl) together in `~/.config/umbriel/shaders/community/animation/magic/`, keeping the [MIT license](../../LICENSES/Barrulus-MIT.txt). Merge [config.toml](config.toml) into your Umbriel configuration:
+
+```toml
+[include]
+files = ["shaders/community/animation/magic/effect.toml"]
+
+[animation]
+enabled = true
+
+[animation.windows_in]
+enabled = true
+effect = "magic"
+duration_ms = 950
+curve = "linear"
+
+[animation.windows_out]
+enabled = true
+effect = "magic"
+duration_ms = 850
+curve = "linear"
+```
+
+Append the include path to an existing `files` array and merge existing tables; do not duplicate them. Including the preset registers it; the two selectors activate the opening/closing pair. Animation selection is global per event.
+
+## Theme palette
+
+This preset enables `palette = true` in `effect.toml`. Artwork colours follow
+Umbriel's `[colors]` accents, warning, and error colours, while retaining shading
+and highlights. Set `palette = false` in that preset to restore the original
+colours shown in the preview. For a border with a companion overlay, change
+both presets together. Shader colour constants are the fallback colours.
+
+## Configuration options
+
+Edit the existing `[effects.preset."magic"]` table in [effect.toml](effect.toml).
+The [complete configuration reference](../../README.md#configuration-reference) explains
+selection, overrides, and accepted ranges. The values below are this preset's shipped
+settings, including defaults for omitted keys.
+
+| TOML setting | Shipped value | What changing it does |
+| --- | --- | --- |
+| `kind` | `"animation"` | Keep this kind: the source implements its `animation` entry point. |
+| `shader` | `"shader.glsl"` | Loads the source beside this preset; change the path only when using another compatible source. |
+| `palette` | `true` | Use theme colours for artwork. Set false to restore the original shader colours. |
+
+Edit the event tables in your main Umbriel configuration (the activation
+example is [config.toml](config.toml)). Larger `duration_ms` gives a slower
+transition. Both `[animation] enabled` and the event must be enabled.
+
+| Event | Example duration | Example curve |
+| --- | --- | --- |
+| `[animation.windows_in]` | `950` ms | `"linear"` |
+| `[animation.windows_out]` | `850` ms | `"linear"` |
+
+Use `effect = ""` to clear the custom selection or event `enabled = false`
+to disable the transition. Spring curves choose their own duration.
+This shader uses linear progress: changing easing does not reshape its internal phases.
+Opening/closing `style` and `scale` do not tune a working custom shader.
+There is no animation-preset TOML `speed`; use event timing.
+
+### Shader controls
+
+Edit these values in [shader.glsl](shader.glsl), not in TOML. `#define` is
+active GLSL code; comments use `//` or `/* ... */`. Start with small changes
+and keep paired shaders in sync. Keep size and duration divisors positive.
+
+| GLSL control or expression | Shipped value | Visual effect |
+| --- | --- | --- |
+| `SPARKLE_DENSITY` | `14.0` | Sparkle grid density; larger makes a finer, busier pattern. |
+
+Save and reload; see [reloading edits](../../README.md#reloading-edits).
+
+### Additional tuning notes
+
+Edit `SPARKLE_DENSITY` in the shader: Sparkle cells per shorter window side; try 8–22. Artwork follows the theme palette; shader colour constants apply with `palette = false`.
+
+## Compatibility and cost
+
+Targets `animation.windows_in` and `animation.windows_out` with the Umbriel preset effects API and GLSL ES 1.00. Both visible endpoints return the original premultiplied sample; both hidden endpoints return transparent black. No previous-frame feedback or extra textures are used.
+
+One texture sample, procedural noise, and a bounded nine-cell sparkle search per fragment. No hardware performance benchmark is claimed.
+
+The puff and sparkles add colour over transparent regions and stay inside the window rectangle.
+
+See the [paired-transition validation report](../../VALIDATION.md#paired-window-transitions) for tested revisions, compilation, endpoint checks, and remaining runtime limitations.
+
+## Attribution
+
+Author/contributor: Barrulus, with Codex assistance. Original implementation for this collection, 2026-09-29. License: [MIT](../../LICENSES/Barrulus-MIT.txt).

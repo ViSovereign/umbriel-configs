@@ -29,10 +29,10 @@
 "Mod+Shift+Down"   = "workspace-next"
 
 #[Window Widths]
-"Mod+1"         = "window-set-primary-extent:0.25"
+"Mod+1"         = "window-set-primary-extent:0.75"
 "Mod+2"         = "window-set-primary-extent:0.50"
 "Mod+3"         = "window-set-primary-extent:0.333"
-"Mod+4"         = "window-set-primary-extent:0.75"
+"Mod+4"         = "window-set-primary-extent:0.25"
 "Mod+5"         = "window-set-primary-extent:1.00"
 "Mod+WheelUp"   = "window-cycle-primary-extent"
 "Mod+WheelDown" = "window-cycle-primary-extent-back"

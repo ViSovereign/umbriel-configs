@@ -30,9 +30,15 @@ match.xdg_tag = "^proton-game$"
 default_fullscreen = true
 
 [[window_rule]]
-match.xdg_tag = "^steam$"
+match.app_id = "^steam$"
 default_fullscreen = false
 default_output = "DP-1"
+
+[[window_rule]]
+match.app_id = "^steam_app_[0-9]+$"
+default_output = "DP-1"
+confine_pointer = true
+default_fullscreen = true
 
 # Noctalia gets floating
 [[window_rule]]
